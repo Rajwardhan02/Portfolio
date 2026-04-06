@@ -30,10 +30,7 @@ It highlights:
 
 ## 🖼️ Preview
 
-### Hero Section
-<p align="center">
-  <img src="DSLR-1.JPG" alt="Hero Preview" width="580" />
-</p>
+
 
 ### Project Highlights
 <p align="center">
@@ -74,13 +71,7 @@ It highlights:
 
 ---
 
-## 🚀 Run Locally
 
-1. Open this folder in VS Code.
-2. Start a local server (example: Python server on port 8000).
-3. Open in browser at http://127.0.0.1:8000/
-
----
 
 ## 🤝 Collaboration
 
@@ -91,11 +82,6 @@ If you'd like to collaborate on AI/ML, web projects, or hackathon ideas:
 
 ---
 
-## 🙏 Credits
-
-Base template originally from BootstrapMade (FolioOne), heavily customized for this portfolio.
-
----
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:06b6d4,50:1d4ed8,100:0f172a" alt="Footer Wave" />
