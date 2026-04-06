@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rajwardhan Bendre | Creative Portfolio</title>
+  <meta name="description" content="A bold, animated portfolio for Rajwardhan Bendre, focused on AI/ML, computer vision, and modern web experiences.">
+  <meta name="keywords" content="Rajwardhan Bendre, portfolio, AI/ML, computer vision, web development, resume">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1a2f;
+      --panel: rgba(10, 18, 33, 0.72);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #edf4ff;
+      --muted: rgba(237, 244, 255, 0.72);
+      --accent: #7c5cff;
+      --accent-2: #00d4ff;
+      --accent-3: #33f0a8;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    body.index-page {
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.16), transparent 24%),
+        linear-gradient(180deg, #050b14 0%, var(--bg) 45%, #050b14 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.2;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body::before {
+      top: 8%;
+      right: -120px;
+      background: var(--accent);
+      animation: floatBlob 14s ease-in-out infinite;
+    }
+
+    body::after {
+      bottom: 6%;
+      left: -120px;
+      background: var(--accent-2);
+      animation: floatBlob 18s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -24px, 0) scale(1.08); }
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+    }
+
+    .navbar-brand .sitename {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .navmenu a {
+      color: var(--text) !important;
+      opacity: 0.86;
+    }
+
+    .navmenu a.active,
+    .navmenu a:hover {
+      opacity: 1;
+      color: var(--accent-2) !important;
+    }
+
+    .hero {
+      padding-top: 72px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.16);
+      border: 1px solid rgba(124, 92, 255, 0.35);
+      color: #d9d1ff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 7.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title .accent {
+      background: linear-gradient(90deg, var(--accent-2), var(--accent), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.1vw, 1.45rem);
+      color: var(--muted);
+      max-width: 42rem;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .hero-chip {
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-size: 0.95rem;
+      transform: translateY(0);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .hero-chip:hover {
+      transform: translateY(-4px);
+      background: rgba(0, 212, 255, 0.14);
+    }
+
+    .hero-actions .btn {
+      border-radius: 999px;
+      padding: 0.9rem 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-neon {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      border: 0;
+      box-shadow: 0 14px 40px rgba(0, 212, 255, 0.22);
+    }
+
+    .btn-outline-light {
+      border-color: rgba(255, 255, 255, 0.18) !important;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(6px);
+      opacity: 0.9;
+      animation: orbFloat 10s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.9) 0%, rgba(0, 212, 255, 0) 70%);
+      top: 8%;
+      left: 8%;
+    }
+
+    .orb.two {
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(124, 92, 255, 0.75) 0%, rgba(124, 92, 255, 0) 70%);
+      bottom: 8%;
+      right: 6%;
+      animation-delay: -4s;
+    }
+
+    .orb.three {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(51, 240, 168, 0.85) 0%, rgba(51, 240, 168, 0) 70%);
+      top: 55%;
+      left: 0;
+      animation-delay: -2s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.08); }
+    }
+
+    .profile-frame {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 32px;
+      background: linear-gradient(145deg, rgba(124, 92, 255, 0.3), rgba(0, 212, 255, 0.16));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+      transform: perspective(1200px) rotateY(-10deg) rotateX(6deg);
+      transition: transform 0.4s ease;
+    }
+
+    .profile-frame:hover {
+      transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+    }
+
+    .profile-frame img {
+      border-radius: 24px;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .floating-stat {
+      position: absolute;
+      padding: 0.8rem 1rem;
+      border-radius: 18px;
+      background: rgba(10, 18, 33, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-stat strong {
+      display: block;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .floating-stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .floating-stat.top {
+      top: 9%;
+      right: -6%;
+      animation: bob 7s ease-in-out infinite;
+    }
+
+    .floating-stat.bottom {
+      left: -4%;
+      bottom: 16%;
+      animation: bob 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .ticker {
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 3rem;
+      width: max-content;
+      white-space: nowrap;
+      padding: 1rem 0;
+      animation: scroll 24s linear infinite;
+      color: #eef7ff;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .section-card {
+      height: 100%;
+      padding: 1.4rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 212, 255, 0.28);
+    }
+
+    .section-card .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.26), rgba(0, 212, 255, 0.2));
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .resume-timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .resume-timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.4rem;
+      padding-left: 1rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -0.05rem;
+      top: 0.3rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.12);
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 100%;
+      padding: 1.1rem;
+    }
+
+    .project-visual {
+      width: 100%;
+      height: 260px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(145deg, rgba(124, 92, 255, 0.2), rgba(0, 212, 255, 0.18));
+    }
+
+    .project-icon-lg {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 2.1rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-visual.cv {
+      background: linear-gradient(145deg, rgba(51, 240, 168, 0.22), rgba(0, 212, 255, 0.18));
+    }
+
+    .project-visual.travel {
+      background: linear-gradient(145deg, rgba(124, 92, 255, 0.24), rgba(255, 145, 77, 0.18));
+    }
+
+    .project-visual.proto {
+      background: linear-gradient(145deg, rgba(255, 92, 159, 0.2), rgba(0, 212, 255, 0.16));
+    }
+
+    .project-visual.ui {
+      background: linear-gradient(145deg, rgba(0, 212, 255, 0.2), rgba(124, 92, 255, 0.16));
+    }
+
+    .project-visual.deploy {
+      background: linear-gradient(145deg, rgba(255, 201, 71, 0.22), rgba(124, 92, 255, 0.16));
+    }
+
+    .project-copy {
+      color: #fff;
+      padding: 0.25rem 0.2rem 0.2rem;
+    }
+
+    .testimonial {
+      padding: 1.3rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .proof-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      background: linear-gradient(145deg, rgba(124, 92, 255, 0.22), rgba(0, 212, 255, 0.22));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-panel {
+      padding: 1.5rem;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(124, 92, 255, 0.14), rgba(0, 212, 255, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .footer {
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer, .footer a, .footer p, .footer .credits {
+      color: var(--muted);
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+      }
+
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .profile-frame {
+        transform: none;
+      }
+
+      .floating-stat.top {
+        right: 2%;
+      }
+
+      .floating-stat.bottom {
+        left: 2%;
+      }
+    }
+
+    .resume-link {
+      color: var(--text);
+      text-decoration: none;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: FolioOne
+  * Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
+  * Updated: Aug 23 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top" style="background: rgba(5, 11, 20, 0.72); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="#hero" class="logo d-flex align-items-center me-auto me-xl-0 text-decoration-none">
+        <h1 class="sitename mb-0">Rajwardhan</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.linkedin.com/in/rajwardhanbendre" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:bendrerajwardhan@gmail.com"><i class="bi bi-envelope"></i></a>
+        <a href="Rajwardhan-Resume.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-person"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 hero-copy">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Rajwardhan <span class="accent">Bendre</span></h1>
+            <h2 class="h3 mb-3" data-aos="fade-up" data-aos-delay="250">Creative builder of <span class="typed" data-typed-items="AI systems, computer vision demos, modern interfaces, student startups"></span></h2>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">I design and build ambitious digital experiences with a strong focus on AI/ML, computer vision, and product-first web design. This portfolio combines a bold visual language with practical proof of work.</p>
+
+            <div class="hero-chip-row" data-aos="fade-up" data-aos-delay="350">
+              <span class="hero-chip">AI/ML</span>
+              <span class="hero-chip">Computer Vision</span>
+              <span class="hero-chip">Python</span>
+              <span class="hero-chip">Bootstrap</span>
+              <span class="hero-chip">Problem Solving</span>
+            </div>
+
+            <div class="hero-actions d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="400">
+              <a href="#projects" class="btn btn-neon">Explore Projects</a>
+              <a href="Rajwardhan-Resume.pdf" class="btn btn-outline-light text-white" target="_blank" rel="noopener">Open Resume</a>
+            </div>
+
+            <div class="d-flex flex-wrap gap-4 mt-4" data-aos="fade-up" data-aos-delay="450">
+              <a class="resume-link" href="mailto:bendrerajwardhan@gmail.com"><i class="bi bi-envelope me-2"></i>bendrerajwardhan@gmail.com</a>
+              <a class="resume-link" href="https://www.linkedin.com/in/rajwardhanbendre" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-visual" data-aos="zoom-in" data-aos-delay="300">
+            <div class="orb one"></div>
+            <div class="orb two"></div>
+            <div class="orb three"></div>
+
+            <div class="profile-frame">
+              <img src="DSLR-1.JPG" alt="Rajwardhan Bendre portrait">
+              <div class="floating-stat top">
+                <strong>9.14</strong>
+                <span>CGPA</span>
+              </div>
+              <div class="floating-stat bottom">
+                <strong>2+</strong>
+                <span>Featured builds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>AI/ML student</span>
+        <span>Computer vision</span>
+        <span>Product thinking</span>
+        <span>Hackathon builder</span>
+        <span>Modern web interfaces</span>
+        <span>AI/ML student</span>
+        <span>Computer vision</span>
+        <span>Product thinking</span>
+        <span>Hackathon builder</span>
+        <span>Modern web interfaces</span>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5">
+            <div class="glass p-3">
+              <img src="DSLR-1.JPG" alt="Rajwardhan Bendre" class="img-fluid rounded-4">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">About Me</h2>
+            <p>I am a second-year Information Technology student with a strong interest in AI/ML, computer vision, and product-focused development. I like turning rough ideas into sharp, practical digital experiences.</p>
+            <p>My work spans Python, OpenCV, recommendation systems, and rapid prototyping. I enjoy hackathons, team-led builds, and projects that make people say, “that feels different.”</p>
+            <div class="row gy-3 mt-4">
+              <div class="col-md-6">
+                <div class="section-card">
+                  <strong>Education:</strong><br>
+                  B.Tech in Information Technology<br>
+                  CGPA: 9.14/10
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="section-card">
+                  <strong>Focus Areas:</strong><br>
+                  AI/ML, Computer Vision, Python, Web Development
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div>
+            <div class="section-kicker">Resume</div>
+            <h2 class="section-title mb-1">Resume</h2>
+            <p class="mb-0 text-white-50">A quick snapshot of my background, strengths, and what I’m building next.</p>
+          </div>
+          <a class="btn btn-neon" href="Rajwardhan-Resume.pdf" target="_blank" rel="noopener">Open Resume</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="section-card h-100">
+              <div class="icon-box"><i class="bi bi-mortarboard"></i></div>
+                <h3 class="h5">Education</h3>
+                <p class="mb-1"><strong>B.Tech, Information Technology</strong></p>
+                <p class="mb-1">Marathwada Mitra Mandal's College of Engineering, Pune</p>
+                <p class="mb-0">2024–2028 • CGPA: 9.14/10</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="section-card h-100">
+              <div class="icon-box"><i class="bi bi-tools"></i></div>
+                <h3 class="h5">Skills</h3>
+                <ul class="list-unstyled mb-0">
+                  <li>Python, C++</li>
+                  <li>Machine Learning, NLP, Computer Vision</li>
+                  <li>NumPy, Pandas, Scikit-learn, OpenCV</li>
+                  <li>Git, GitHub, Jupyter Notebook</li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="section-card h-100">
+              <div class="icon-box"><i class="bi bi-briefcase"></i></div>
+              <h3 class="h5">Experience Highlights</h3>
+                <ul class="list-unstyled mb-0">
+                  <li>Led a student team on AI/ML and software projects</li>
+                  <li>Worked on hackathons and rapid prototyping</li>
+                  <li>Won internal Smart India Hackathon recognition</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-12">
+            <div class="section-card resume-timeline">
+              <div class="timeline-item">
+                <h3 class="h5 mb-1">CV-Based Sports Coaching Assistant</h3>
+                <p class="mb-1 text-white-50">Computer vision MVP for real-time movement analysis and corrective feedback.</p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h5 mb-1">Hamsafrr — AI-Based Travel Companion</h3>
+                <p class="mb-1 text-white-50">Recommendation-led travel planning platform with personalized routes and suggestions.</p>
+              </div>
+              <div class="timeline-item mb-0">
+                <h3 class="h5 mb-1">Leadership & Hackathons</h3>
+                <p class="mb-1 text-white-50">Team leadership, event coordination, and practical product building under tight deadlines.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-kicker">Portfolio</div>
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="glass project-card h-100">
+              <div class="project-visual cv" aria-hidden="true">
+                <div class="project-icon-lg"><i class="bi bi-camera-video"></i></div>
+              </div>
+              <div class="project-copy">
+                <h3 class="h4 mb-2">CV-Based Sports Coaching Assistant</h3>
+                <p class="mb-2 text-white-75">Computer vision MVP that analyzes movement and provides corrective feedback through pose estimation.</p>
+                <p class="mb-0 small text-uppercase letter-spacing">Computer Vision • Python • OpenCV</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="glass project-card h-100">
+              <div class="project-visual travel" aria-hidden="true">
+                <div class="project-icon-lg"><i class="bi bi-signpost-split"></i></div>
+              </div>
+              <div class="project-copy">
+                <h3 class="h4 mb-2">Hamsafrr — AI-Based Travel Companion</h3>
+                <p class="mb-2 text-white-75">An intelligent travel platform with personalized recommendations and route optimization.</p>
+                <p class="mb-0 small text-uppercase letter-spacing">AI • Recommendation Systems • Product Design</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="glass project-card h-100">
+              <div class="project-visual proto" aria-hidden="true">
+                <div class="project-icon-lg"><i class="bi bi-lightbulb"></i></div>
+              </div>
+              <div class="project-copy">
+                <h3 class="h5 mb-1">Rapid Prototyping</h3>
+                <p class="mb-0 small text-white-75">Idea-to-interface workflow.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass project-card h-100">
+              <div class="project-visual ui" aria-hidden="true">
+                <div class="project-icon-lg"><i class="bi bi-layout-text-window-reverse"></i></div>
+              </div>
+              <div class="project-copy">
+                <h3 class="h5 mb-1">Interface Systems</h3>
+                <p class="mb-0 small text-white-75">Clean layouts and visual hierarchy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass project-card h-100">
+              <div class="project-visual deploy" aria-hidden="true">
+                <div class="project-icon-lg"><i class="bi bi-rocket-takeoff"></i></div>
+              </div>
+              <div class="project-copy">
+                <h3 class="h5 mb-1">Deployment Ready</h3>
+                <p class="mb-0 small text-white-75">Polished for web presentation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-kicker">Stack</div>
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="row g-3">
+          <div class="col-md-3 col-6"><div class="section-card text-center">Python</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">Machine Learning</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">Computer Vision</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">OpenCV</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">NumPy</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">Pandas</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">Scikit-learn</div></div>
+          <div class="col-md-3 col-6"><div class="section-card text-center">Git & GitHub</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Proof Section -->
+    <section id="proof" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-kicker">Proof</div>
+        <h2 class="section-title">What I Focus On</h2>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="testimonial h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="proof-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div>
+                <div>
+                  <strong>Fast learning</strong><br>
+                  <span class="text-white-50">I pick up tools quickly and ship.</span>
+                </div>
+              </div>
+              <p class="mb-0">I like building with intent, keeping interfaces clean while making the underlying logic useful and understandable.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="proof-icon" aria-hidden="true"><i class="bi bi-bullseye"></i></div>
+                <div>
+                  <strong>Product thinking</strong><br>
+                  <span class="text-white-50">I think about users first.</span>
+                </div>
+              </div>
+              <p class="mb-0">Every project should communicate clearly, solve a real problem, and feel polished enough to stand next to stronger portfolio work.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="proof-icon" aria-hidden="true"><i class="bi bi-people"></i></div>
+                <div>
+                  <strong>Team collaboration</strong><br>
+                  <span class="text-white-50">I work well with others.</span>
+                </div>
+              </div>
+              <p class="mb-0">I enjoy leading, communicating, and keeping work organized so the final result looks sharp and lands well.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">Let’s build something bold</h2>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="contact-panel h-100">
+              <p class="mb-3">If you want a portfolio like this, I can refine the copy, add your own projects, and tune the motion so it feels more personal.</p>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="section-card h-100">
+                    <strong>Email</strong><br>
+                    <a class="resume-link" href="mailto:bendrerajwardhan@gmail.com">bendrerajwardhan@gmail.com</a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="section-card h-100">
+                    <strong>LinkedIn</strong><br>
+                    <a class="resume-link" href="https://www.linkedin.com/in/rajwardhanbendre" target="_blank" rel="noopener">/in/rajwardhanbendre</a>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-neon" href="Rajwardhan-Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+                <a class="btn btn-outline-light text-white" href="#hero">Back to top</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-panel h-100">
+              <h3 class="h5">Hi, I’d love to work and collaborate with you.</h3>
+              <p class="mb-3">If you have an idea, project, internship opportunity, or startup concept, feel free to connect. I enjoy building meaningful products with creative teams.</p>
+              <ul class="mb-0">
+                <li>Open to internships and project collaborations</li>
+                <li>Available for AI/ML and web-based builds</li>
+                <li>Happy to discuss ideas and prototypes</li>
+                <li>Let’s create something impactful together</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Rajwardhan Bendre</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="mailto:bendrerajwardhan@gmail.com"><i class="bi bi-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/rajwardhanbendre" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="#hero"><i class="bi bi-arrow-up-short"></i></a>
+      </div>
+      <div class="credits">
+        Built with Bootstrap and customized for Rajwardhan Bendre
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      if (window.AOS) {
+        AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true });
+      }
+    });
+
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'), 10);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 80));
+
+        const tick = () => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            observer.unobserve(el);
+            return;
+          }
+          el.textContent = current;
+          requestAnimationFrame(tick);
+        };
+
+        tick();
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach((counter) => counterObserver.observe(counter));
+  </script>
+
+</body>
+
+</html>
